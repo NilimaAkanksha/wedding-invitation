@@ -15,6 +15,44 @@
       --sage: #8b9b83;
       --ink: #51444a;
     }
+    
+/* Falling flower petals */
+#petal-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.petal {
+  position: absolute;
+  top: -50px;
+  color: #d99aaa;
+  opacity: 0.8;
+  animation: petal-fall linear infinite;
+  will-change: transform;
+  user-select: none;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(35px, 50vh, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(-25px, 110vh, 0) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    animation-play-state: paused;
+  }
+}
+
 
     * {
       box-sizing: border-box;
