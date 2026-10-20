@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff7f5">
+<title>Our Wedding Invitation</title>
+<style>
+:root{--rose:#b86f7d;--deep:#784b58;--cream:#fffaf6;--ink:#51444a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+.hero{min-height:94vh;display:grid;place-items:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#fff9f5,#f7e6e9 55%,#f4eee7)}
+.frame{width:min(720px,100%);border:1px solid #d8afb4;padding:clamp(28px,7vw,70px) 20px;background:#fffaf5e8;box-shadow:0 18px 55px #8a5d6412}
+.eyebrow,.section-kicker{letter-spacing:.22em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--rose)}
+h1{font-size:clamp(42px,10vw,76px);font-weight:normal;line-height:1.04;color:var(--deep);margin:22px 0;overflow-wrap:anywhere}
+.amp{font-style:italic;color:var(--rose);font-size:.75em}.hero-date{font-size:18px;letter-spacing:.08em}
+.btn{display:inline-block;margin:12px 6px;padding:12px 20px;border:1px solid var(--rose);background:var(--rose);color:white;text-decoration:none;border-radius:30px;font:12px Arial,sans-serif;letter-spacing:.08em}
+.btn.secondary{background:transparent;color:var(--deep)}
+section{padding:72px 20px;text-align:center}.section-inner{max-width:900px;margin:auto}
+h2{font-size:clamp(30px,6vw,45px);font-weight:normal;color:var(--deep);margin:8px 0 24px}
+.intro{max-width:620px;margin:0 auto 20px}.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px auto}
+.time{background:white;border:1px solid #efd9dc;border-radius:12px;padding:18px 12px;min-width:86px}
+.time strong{display:block;font-size:30px;font-weight:normal;color:var(--deep)}.time span{font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.event{padding:26px 18px;background:white;border:1px solid #efd9dc;border-radius:14px}
+.event .flower{font-size:25px}.event h3{color:var(--deep);font-size:23px;font-weight:normal;margin:8px 0}
+.soft{background:#f8ecec}.note{font:12px Arial,sans-serif;color:#8a777c}
+footer{padding:35px 20px;text-align:center;background:#f5e4e6;color:var(--deep)}
+#petal-container{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:999}
+.petal{position:absolute;top:-50px;color:#d99aaa;opacity:.8;animation:petal-fall linear infinite;will-change:transform;user-select:none}
+@keyframes petal-fall{0%{transform:translate3d(0,-5vh,0) rotate(0deg)}50%{transform:translate3d(35px,50vh,0) rotate(180deg)}100%{transform:translate3d(-25px,110vh,0) rotate(360deg)}}
+.music-button{position:fixed;right:18px;bottom:20px;z-index:1001;padding:12px 18px;border:1px solid #d7a4ad;border-radius:30px;background:#fffaf6;color:#784b58;font:13px Arial,sans-serif;box-shadow:0 4px 18px #784b5825;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.petal{animation-play-state:paused}html{scroll-behavior:auto}}
+@media(max-width:650px){.events{grid-template-columns:1fr}.hero{min-height:90vh}}
+</style>
+</head>
+<body>
+<div id="petal-container" aria-hidden="true"></div>
+
+<header class="hero" id="home"><div class="frame">
+<div class="eyebrow">Together with our families</div><p style="font-size:28px;margin:18px 0 0;color:#b86f7d">❀</p>
+<p class="eyebrow">Joyfully invite you to celebrate</p>
+<h1><span id="name1">Your Name</span><br><span class="amp">&</span><br><span id="name2">Your Partner</span></h1>
+<div class="hero-date" id="dateLabel">Our wedding day · Date to be announced</div>
+<p>Two hearts, one beautiful journey.</p>
+<a class="btn" href="#details">Explore the invitation</a><a class="btn secondary" href="#events">Wedding events</a>
+</div></header>
+
+<section id="details"><div class="section-inner">
+<div class="section-kicker">A little countdown to forever</div><h2>Our day is almost here</h2>
+<p class="intro">With full hearts and joyful spirits, we would love for you to join us as we begin this new chapter together.</p>
+<div class="countdown" aria-live="polite">
+<div class="time"><strong id="days">—</strong><span>Days</span></div><div class="time"><strong id="hours">—</strong><span>Hours</span></div>
+<div class="time"><strong id="minutes">—</strong><span>Minutes</span></div><div class="time"><strong id="seconds">—</strong><span>Seconds</span></div>
+</div><p id="countdownMessage" class="note">Add your wedding date in the settings section of this file.</p>
+</div></section>
+
+<section class="soft" id="events"><div class="section-inner">
+<div class="section-kicker">Save the date</div><h2>Wedding celebrations</h2>
+<p class="intro">Update the event names, timings and venue below when your plans are confirmed.</p>
+<div class="events">
+<article class="event"><div class="flower">❀</div><h3>Mehendi</h3><p data-event-date="mehendi">Date to be announced</p><p data-event-time="mehendi">Time to be announced</p></article>
+<article class="event"><div class="flower">♡</div><h3>Wedding Ceremony</h3><p data-event-date="wedding">Date to be announced</p><p data-event-time="wedding">Time to be announced</p></article>
+<article class="event"><div class="flower">✿</div><h3>Reception</h3><p data-event-date="reception">Date to be announced</p><p data-event-time="reception">Time to be announced</p></article>
+</div></div></section>
+
+<section class="soft" id="venue"><div class="section-inner">
+<div class="section-kicker">We can't wait to see you</div><h2>Find the venue</h2>
+<p id="venueName">Venue details to be announced</p><p id="venueAddress" class="note">Add the venue address to the settings in this file.</p>
+<a id="mapLink" class="btn" href="https://maps.google.com/" target="_blank" rel="noopener">Open Google Maps</a>
+</div></section>
+
+<footer><div style="font-size:28px">❀ ♡ ❀</div><p>With love, from our families to yours.</p><p class="note">Made with love · Our Wedding Invitation</p></footer>
+
+<!-- Upload your own music file as music.mp3 beside index.html -->
+<audio id="weddingMusic" src="./music.mp3" loop preload="none"></audio>
+<button id="musicToggle" class="music-button" aria-label="Play wedding music" aria-pressed="false">♫ Play music</button>
+
+<script>
+/* PERSONALIZE THESE DETAILS */
+const WEDDING = {
+  name1: "Your Name",
+  name2: "Your Partner",
+  // Format: YYYY-MM-DDTHH:MM:SS+05:30. Example: "2026-11-21T18:00:00+05:30"
+  dateTime: "",
+  venueName: "Venue details to be announced",
+  venueAddress: "",
+  mapQuery: "",
+  events: {
+    mehendi: {date:"Date to be announced",time:"Time to be announced"},
+    wedding: {date:"Date to be announced",time:"Time to be announced"},
+    reception: {date:"Date to be announced",time:"Time to be announced"}
+  }
+};
+
+document.getElementById("name1").textContent = WEDDING.name1;
+document.getElementById("name2").textContent = WEDDING.name2;
+document.getElementById("venueName").textContent = WEDDING.venueName;
+document.getElementById("venueAddress").textContent = WEDDING.venueAddress || "Add the venue address to the settings in this file.";
+document.getElementById("mapLink").href = WEDDING.mapQuery
+  ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(WEDDING.mapQuery)
+  : "https://maps.google.com/";
+
+for (const key of ["mehendi","wedding","reception"]) {
+  document.querySelector(`[data-event-date="${key}"]`).textContent = WEDDING.events[key].date;
+  document.querySelector(`[data-event-time="${key}"]`).textContent = WEDDING.events[key].time;
+}
+
+if (WEDDING.dateTime) {
+  const weddingDate = new Date(WEDDING.dateTime);
+  document.getElementById("dateLabel").textContent = weddingDate.toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
+  function updateCountdown() {
+    const diff = weddingDate.getTime() - Date.now();
+    if (Number.isNaN(weddingDate.getTime())) {
+      document.getElementById("countdownMessage").textContent = "Please check the wedding date format.";
+      return;
+    }
+    if (diff <= 0) {
+      ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "0");
+      document.getElementById("countdownMessage").textContent = "Today is a beautiful day to celebrate love!";
+      return;
+    }
+    const values = {days:Math.floor(diff/86400000),hours:Math.floor(diff/3600000)%24,minutes:Math.floor(diff/60000)%60,seconds:Math.floor(diff/1000)%60};
+    Object.entries(values).forEach(([id,value]) => document.getElementById(id).textContent = value);
+    document.getElementById("countdownMessage").textContent = "Counting down to our special day.";
+  }
+  updateCountdown();
+  setInterval(updateCountdown,1000);
+}
+
+/* Falling flowers across the whole page */
+const petalContainer = document.getElementById("petal-container");
+const petalSymbols = ["🌸","🌷","✿","❀"];
+for (let i=0; i<22; i++) {
+  const petal = document.createElement("span");
+  petal.className = "petal";
+  petal.textContent = petalSymbols[Math.floor(Math.random()*petalSymbols.length)];
+  petal.style.left = Math.random()*100 + "vw";
+  petal.style.animationDuration = 8 + Math.random()*12 + "s";
+  petal.style.animationDelay = -Math.random()*20 + "s";
+  petal.style.fontSize = 14 + Math.random()*14 + "px";
+  petalContainer.appendChild(petal);
+}
+
+/* Music button: visitors tap to play or pause */
+const music = document.getElementById("weddingMusic");
+const musicToggle = document.getElementById("musicToggle");
+musicToggle.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicToggle.textContent = "♫ Pause music";
+      musicToggle.setAttribute("aria-label","Pause wedding music");
+      musicToggle.setAttribute("aria-pressed","true");
+    } catch (error) {
+      musicToggle.textContent = "Tap to play again";
+    }
+  } else {
+    music.pause();
+    musicToggle.textContent = "♫ Play music";
+    musicToggle.setAttribute("aria-label","Play wedding music");
+    musicToggle.setAttribute("aria-pressed","false");
+  }
+});
+music.addEventListener("pause", () => {
+  musicToggle.textContent = "♫ Play music";
+  musicToggle.setAttribute("aria-pressed","false");
+});
+</script>
+</body>
+</html>
